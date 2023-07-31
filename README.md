@@ -1,4 +1,4 @@
-# Assignment2semester3.
+# Assignment 2  semester 3 .
 This is the solution of assignment 2 in python 
 
 List: 
