@@ -1,21 +1,9 @@
-import ast
+# Get input from the user
+data = input("Enter a tuple of tuples: ")
+data = eval(data)  # Convert the input string to a tuple
 
-input_data = input("Enter tuples of format (x, y), separated by commas: ")
+# Sort the tuple of tuples by the 2nd item
+sort = sorted(data, key=lambda x: x[1])
 
-tuple_strings = input_data.split(',')
+print("Sorted tuple of tuples:", sort)
 
-data = []
-for tuple_str in tuple_strings:
-    try:
-        t = ast.literal_eval(tuple_str)
-        if isinstance(t, tuple) and len(t) == 2:
-            data.append(t)
-        else:
-            print("Invalid tuple:", tuple_str)
-    except (ValueError, SyntaxError):
-        print("Invalid input:", tuple_str)
-
-print("Data:", data)
-sorted_data = sorted(data, key=lambda x: x[1])
-
-print(sorted_data)
